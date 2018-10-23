@@ -8,7 +8,7 @@ def empty_table
 end
 
 def fill_table_with_three_examples
-  database.exec("INSERT INTO bookmarks(id,url) VALUES(1,'http://makers.tech'),
-  (2, 'http://google.com'),
-  (3, 'http://www.destroyallsoftware.com')")
+  Bookmark.create("http://makers.tech")
+  Bookmark.create("http://google.com")
+  Bookmark.create("http://www.destroyallsoftware.com")
 end
