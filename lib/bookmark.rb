@@ -1,5 +1,4 @@
 require 'pg'
-require 'pry'
 
 class Bookmark
   attr_reader :id, :title, :url
@@ -27,6 +26,6 @@ class Bookmark
     else
       database = PG.connect(dbname: 'bookmark_manager')
     end
-    database.exec("INSERT INTO bookmarks(title,url) VALUES('#{title}','#{url}')")
+    database.exec("INSERT INTO bookmarks(title,url) VALUES('#{title}','#{url}') RETURNING id, title, url")
   end
 end
