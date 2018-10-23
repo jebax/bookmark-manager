@@ -9,4 +9,9 @@ feature 'viewing a list of bookmark' do
     expect(page).to have_content "Google"
     expect(page).to have_content "Makers"
   end
+  scenario 'visiting bookmark url' do
+    visit '/bookmarks'
+    click_link "Destroy All Software"
+    expect(page).to have_current_path("http://www.destroyallsoftware.com")
+  end
 end
