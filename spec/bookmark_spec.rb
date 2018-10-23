@@ -4,7 +4,6 @@ describe Bookmark do
   subject(:bookmarks_1) { described_class.new('bookmark_manager_test') }
 
   before do
-    empty_table
     fill_table_with_three_examples
   end
 

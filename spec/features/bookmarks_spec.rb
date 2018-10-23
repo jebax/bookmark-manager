@@ -1,6 +1,5 @@
 feature 'viewing a list of bookmark' do
   before do
-    empty_table
     fill_table_with_three_examples
   end
 

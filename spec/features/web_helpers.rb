@@ -3,7 +3,8 @@ def database
 end
 
 def empty_table
-  database.exec('TRUNCATE TABLE bookmarks')
+  database.exec('DROP TABLE IF EXISTS bookmarks')
+  database.exec('CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60))')
 end
 
 def fill_table_with_three_examples
